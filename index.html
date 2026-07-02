@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>olexporf | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
+            background: radial-gradient(circle at top right, #1e293b, #0d1117 60%);
             color: #c9d1d9;
             line-height: 1.6;
             margin: 0;
             padding: 40px 20px;
+            min-height: 100vh;
         }
 
         .container {
@@ -27,56 +28,57 @@
         }
 
         h1 {
-	    font-family: 'Unbounded', sans-serif;
-	    font-weight: 700;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
             font-size: 2.8rem;
-            margin-bottom: 5px;
-            
-            
-            background: linear-gradient(45deg, #58a6ff, #00ffcc); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+            margin-bottom: 12px;
+            background: linear-gradient(45deg, #58a6ff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: inline-block;
+            filter: drop-shadow(0 2px 8px rgba(0, 255, 204, 0.2));
+        }
+
+        .subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            color: #8b949e;
+            font-size: 1rem;
+            margin-top: 0;
+            letter-spacing: -0.1px;
         }
 
         .card {
-	    font-family: 'JetBrains Mono', monospace;
+            font-family: 'JetBrains Mono', monospace;
             background-color: #161b22;
             border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            
-            
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        border-color 0.3s ease; 
 
-	    -webkit-user-select: none;
+            -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
 
-	.card:hover {
-            transform: translateY(-8px); 
-            border-color: #58a6ff; 
-            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.15); 
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #28D6E3;
+            box-shadow: 0 12px 30px rgba(0, 255, 204, 0.1);
         }
-
-	.subtitle {
-    		font-family: 'JetBrains Mono', monospace;
-    		color: #8b949e;
-    		font-size: 1rem;
-    		margin-top: 0;
-    		letter-spacing: -0.1px;
-	}
 
         h3 {
             color: #58a6ff;
             margin-top: 0;
             border-bottom: 1px solid #30363d;
-            padding-bottom: 8px;
+            padding-bottom: 12px;
             font-size: 1.3rem;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
         }
 
         ul {
@@ -87,32 +89,56 @@
 
         li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
+            padding-left: 25px;
+            margin-bottom: 16px;
+            transition: transform 0.2s ease;
         }
 
-        
+        li:hover {
+            transform: translateX(4px);
+        }
+
         li::before {
-            content: "•";
-            color: #58a6ff; 
+            content: ">";
+            color: #00ffcc;
             font-weight: bold;
             position: absolute;
-            left: 0;
+            left: 5px;
         }
 
         strong {
             color: #f0f6fc;
         }
 
-        a {
+        .badge {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
             color: #58a6ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin: 2px 0;
+        }
+        
+        .badge-green {
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            color: #00ffcc;
+        }
+
+        a {
+            color: #00ffcc;
             text-decoration: none;
-            transition: color 0.2s ease;
+            font-weight: bold;
+            border-bottom: 1px dashed transparent;
+            transition: all 0.2s ease;
         }
 
         a:hover {
-            color: #1f6feb;
-            text-decoration: underline;
+            color: #58a6ff;
+            border-bottom-color: #58a6ff;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -128,20 +154,20 @@
         <div class="card">
             <h3>С чем уже работал:</h3>
             <ul>
-                <li><strong>Языки программирования:</strong> Python, Kotlin; Разбираюсь в синтаксисе других языков.</li>
-                <li><strong>Разработка ботов:</strong> Имел дело с написанием Telegram-ботов (библиотека aiogram).</li>
-                <li><strong>Игровая разработка:</strong> Пишу кастомные плагины для Minecraft (Bukkit/PaperMC API).</li>
+                <li><strong>Языки программирования:</strong> <span class="badge">Python</span>, <span class="badge">Kotlin</span>; Разбираюсь в синтаксисе других языков.</li>
+                <li><strong>Разработка ботов:</strong> Имел дело с написанием Telegram-ботов (библиотека <span class="badge">aiogram</span>).</li>
+                <li><strong>Игровая разработка:</strong> Пишу кастомные плагины для Minecraft (<span class="badge-green">Bukkit/PaperMC API</span>).</li>
                 <li><strong>Web-разработка:</strong> Умею делать сайты-визитки.</li>
                 <li><strong>Десктопная и мобильная разработка:</strong> Изучаю создание программ для ПК, а также интересуюсь созданием мобильных приложений под Android.</li>
             </ul>
 
             <div style="margin-top: 40px;">
-                <h3>Алгоритмы и структуры данных </h3>
+                <h3>Алгоритмы и структуры данных:</h3>
                 <p>Изучаю фундаментальную базу по книге «Грокаем алгоритмы». Понимаю, как оптимизировать код и оценивать его эффективность:</p>
                 <ul>
-                    <li><strong>Алгоритмы поиска и сортировки:</strong> Бинарный поиск, быстрая сортировка (Quick Sort), сортировка выбором. Понимаю разницу между эффективностью O(log n) и O(n²).</li>
+                    <li><strong>Алгоритмы поиска и сортировки:</strong> Бинарный поиск, быстрая сортировка (<span class="badge">Quick Sort</span>), сортировка выбором. Понимаю разницу между эффективностью <span class="badge-green">O(log n)</span> и <span class="badge-green">O(n²)</span>.</li>
                     <li><strong>Структуры данных:</strong> Массивы, связанные списки, хэш-таблицы (словари), графы.</li>
-                    <li><strong>Графовые алгоритмы:</strong> Поиск в ширину (BFS) для нахождения кратчайшего пути.</li>
+                    <li><strong>Графовые алгоритмы:</strong> Поиск в ширину (<span class="badge">BFS</span>) для нахождения кратчайшего пути.</li>
                 </ul>
             </div>
         </div>
@@ -149,7 +175,7 @@
         <div class="card">
             <h3>Мои проекты:</h3>
             <ul>
-                <li><a href="https://github.com/olexporf/MindChase/">Проект 1</a> – успешный Minecraft-плагин с мини-игрой.</li>
+                <li><a href="https://github.com/olexporf/MindChase/" target="_blank">Проект 1</a> – успешный Minecraft-плагин с мини-игрой.</li>
             </ul>
         </div>
 
