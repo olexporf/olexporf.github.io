@@ -2,46 +2,147 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Моё Портфолио</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>olexporf | Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #121212; color: #fff; text-align: center; padding: 50px; }
-        h1 { color: #00ffcc; }
-        .projects { margin-top: 30px; display: inline-block; text-align: left; }
-        a { color: #00ffcc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            
+            /* Магия градиента: */
+            background: linear-gradient(45deg, #58a6ff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Стильные блоки-карточки */
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+
+	    -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+	.card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.15);
+        }
+
+        h3 {
+            color: #58a6ff;
+            margin-top: 0;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        /* Оформление списков */
+        ul {
+            list-style-type: none; /* Убираем стандартные точки */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* Кастомные маркеры вместо обычных точек */
+        li::before {
+            content: "•";
+            color: #58a6ff; /* Точки теперь синие */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            color: #f0f6fc; /* Делаем жирный текст более ярким */
+        }
+
+        /* Ссылки на проекты и контакты */
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #1f6feb;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Привет, я olexporf</h1>
-    <p><strong>Кто я:</strong> начинающий разработчик и программист.</p>
-    
-    <div style="text-align: left; max-width: 600px; margin: 30px auto; line-height: 1.6; border-left: 3px solid #00ffcc; padding-left: 15px;">
-        <h3>С чем уже работал:</h3>
-        <ul>
-            <li><strong>Языки программирования:</strong> Python, Kotlin; Разбираюсь в синтаксисе других языков.</li>
-            <li><strong>Разработка ботов:</strong> Имел дело с написанием Telegram-ботов (библиотека aiogram).</li>
-            <li><strong>Игровая разработка:</strong> Пишу кастомные плагины для Minecraft (Bukkit/PaperMC API).</li>
-            <li><strong>Web-разработка:</strong> Умею делать сайты-визитки.</li>
-            <li><strong>Десктопная и мобильная разработка:</strong> Изучаю создание программ для ПК, а также интересуюсь созданием мобильных приложений под Android.</li>
-        </ul>
-    </div>
-    
-    <div style="text-align: left; max-width: 600px; margin: 30px auto; line-height: 1.6; border-left: 3px solid #00ffcc; padding-left: 15px;">
-        <h3>Алгоритмы и структуры данных</h3>
-        <p>Изучаю фундаментальную базу по книге «Грокаем алгоритмы». Понимаю, как оптимизировать код и оценивать его эффективность:</p>
-        <ul>
-            <li><strong>Алгоритмы поиска и сортировки:</strong> Бинарный поиск, быстрая сортировка (Quick Sort), сортировка выбором; использование рекурсий. </li>
-            <li><strong>Структуры данных:</strong> Массивы, связанные списки, хэш-таблицы (словари), графы.</li>
-            <li><strong>Графовые алгоритмы:</strong> Поиск в ширину (BFS) для нахождения кратчайшего пути.</li>
-        </ul>
-    </div>
+    <div class="container">
+        
+        <header>
+            <h1>Привет, я olexporf</h1>
+            <p class="subtitle">Начинающий разработчик и программист.</p>
+        </header>
 
-    <div class="projects">
-        <h3>Мои проекты:</h3>
-        <ul>
-            <li><a href="https://github.com/olexporf/MindChase/">Проект 1</a> — успешный Minecraft-плагин с мини-игрой</li>
-        </ul>
+        <div class="card">
+            <h3>С чем уже работал:</h3>
+            <ul>
+                <li><strong>Языки программирования:</strong> Python, Kotlin; Разбираюсь в синтаксисе других языков.</li>
+                <li><strong>Разработка ботов:</strong> Имел дело с написанием Telegram-ботов (библиотека aiogram).</li>
+                <li><strong>Игровая разработка:</strong> Пишу кастомные плагины для Minecraft (Bukkit/PaperMC API).</li>
+                <li><strong>Web-разработка:</strong> Умею делать сайты-визитки.</li>
+                <li><strong>Десктопная разработка:</strong> Изучаю создание программ для ПК.</li>
+                <li><strong>Мобильная разработка:</strong> Интересуюсь созданием мобильных приложений под Android.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Алгоритмы и структуры данных</h3>
+            <p>Изучаю фундаментальную базу по книге «Грокаем алгоритмы». Понимаю, как оптимизировать код и оценивать его эффективность:</p>
+            <ul>
+                <li><strong>Алгоритмы поиска и сортировки:</strong> Бинарный поиск, быстрая сортировка (Quick Sort), сортировка выбором. Понимаю разницу между эффективностью O(log n) и O(n²).</li>
+                <li><strong>Структуры данных:</strong> Массивы, связанные списки, хэш-таблицы (словари), графы.</li>
+                <li><strong>Графовые алгоритмы:</strong> Поиск в ширину (BFS) для нахождения кратчайшего пути.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Мои проекты:</h3>
+            <ul>
+                <li><a href="https://github.com/olexporf/MindChase/">Проект 1</a> – успешный Minecraft-плагин с мини-игрой.</li>
+            </ul>
+        </div>
+
     </div>
 
 </body>
