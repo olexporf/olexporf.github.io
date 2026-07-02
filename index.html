@@ -29,9 +29,9 @@
             margin-bottom: 5px;
             
             /* Магия градиента: */
-            background: linear-gradient(45deg, #58a6ff, #00ffcc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(45deg, #58a6ff, #00ffcc); /* Перелив от синего к бирюзовому */
+            -webkit-background-clip: text; /* Вырезаем градиент строго по форме букв */
+            -webkit-text-fill-color: transparent; /* Делаем сам текст прозрачным, чтобы был виден градиент */
             display: inline-block;
         }
 
@@ -44,6 +44,7 @@
             margin-bottom: 25px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             
+            /* Важно для эффектов: говорим браузеру анимировать любые изменения за 0.3 секунды */
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
 
 	    -webkit-user-select: none;
@@ -53,9 +54,9 @@
         }
 
 	.card:hover {
-            transform: translateY(-5px);
-            border-color: #58a6ff;
-            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.15);
+            transform: translateY(-5px); /* Приподнимаем карточку на 5 пикселей вверх */
+            border-color: #58a6ff; /* Подсвечиваем рамку синим */
+            box-shadow: 0 8px 25px rgba(88, 166, 255, 0.15); /* Делаем мягкое неоновое свечение снизу */
         }
 
         h3 {
@@ -96,11 +97,11 @@
         a {
             color: #58a6ff;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.2s ease; /* Плавное изменение цвета */
         }
 
         a:hover {
-            color: #1f6feb;
+            color: #1f6feb; /* При наведении ссылка темнеет */
             text-decoration: underline;
         }
     </style>
@@ -121,19 +122,18 @@
                 <li><strong>Разработка ботов:</strong> Имел дело с написанием Telegram-ботов (библиотека aiogram).</li>
                 <li><strong>Игровая разработка:</strong> Пишу кастомные плагины для Minecraft (Bukkit/PaperMC API).</li>
                 <li><strong>Web-разработка:</strong> Умею делать сайты-визитки.</li>
-                <li><strong>Десктопная разработка:</strong> Изучаю создание программ для ПК.</li>
-                <li><strong>Мобильная разработка:</strong> Интересуюсь созданием мобильных приложений под Android.</li>
+                <li><strong>Десктопная и мобильная разработка:</strong> Изучаю создание программ для ПК, а также интересуюсь созданием мобильных приложений под Android.</li>
             </ul>
-        </div>
 
-        <div class="card">
-            <h3>Алгоритмы и структуры данных</h3>
-            <p>Изучаю фундаментальную базу по книге «Грокаем алгоритмы». Понимаю, как оптимизировать код и оценивать его эффективность:</p>
-            <ul>
-                <li><strong>Алгоритмы поиска и сортировки:</strong> Бинарный поиск, быстрая сортировка (Quick Sort), сортировка выбором. Понимаю разницу между эффективностью O(log n) и O(n²).</li>
-                <li><strong>Структуры данных:</strong> Массивы, связанные списки, хэш-таблицы (словари), графы.</li>
-                <li><strong>Графовые алгоритмы:</strong> Поиск в ширину (BFS) для нахождения кратчайшего пути.</li>
-            </ul>
+            <div style="margin-top: 40px;">
+                <h3>Алгоритмы и структуры данных </h3>
+                <p>Изучаю фундаментальную базу по книге «Грокаем алгоритмы». Понимаю, как оптимизировать код и оценивать его эффективность:</p>
+                <ul>
+                    <li><strong>Алгоритмы поиска и сортировки:</strong> Бинарный поиск, быстрая сортировка (Quick Sort), сортировка выбором. Понимаю разницу между эффективностью O(log n) и O(n²).</li>
+                    <li><strong>Структуры данных:</strong> Массивы, связанные списки, хэш-таблицы (словари), графы.</li>
+                    <li><strong>Графовые алгоритмы:</strong> Поиск в ширину (BFS) для нахождения кратчайшего пути.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="card">
